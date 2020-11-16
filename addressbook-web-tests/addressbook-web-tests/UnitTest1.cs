@@ -50,6 +50,9 @@ namespace addressbook_web_tests
 
             s3.Radius = 15;
             Assert.AreEqual(s1.Radius, 15);
+
+            s2.Colored = true;
+            Assert.AreEqual(s2.Colored, true);
         }
     }
 }
