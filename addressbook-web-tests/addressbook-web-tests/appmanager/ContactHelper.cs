@@ -25,6 +25,7 @@ namespace WebAddressbookTests
             return this;
         }
 
+
         public ContactHelper Modify(int n, ContactData newData)
         {
             InitContactModification(n);
@@ -34,6 +35,18 @@ namespace WebAddressbookTests
             return this;
         }
 
+        public ContactHelper Remove(int v)
+        {
+            InitContactModification(v);
+            SubmitContactRemoval();
+            return this;
+        }
+
+        private void SubmitContactRemoval()
+        {
+            driver.FindElement(By.XPath("(//input[@name='update'])[3]")).Click();
+        }
+
         private void SubmitContactModification()
         {
             driver.FindElement(By.Name("update")).Click();
@@ -41,9 +54,6 @@ namespace WebAddressbookTests
 
         public ContactHelper InitContactModification(int index)
         {
-            //driver.FindElement(By.XPath("(//input[@name='selected[]'])[9]")).Click();
-            //driver.FindElement(By.XPath("(//input[@name='selected[]'])[" + index + "]")).Click();
-            //driver.FindElement(By.XPath("(//img[@alt='Edit'])[5]")).Click();
             driver.FindElement(By.XPath("(//img[@alt='Edit'])[" + index + "]")).Click();
 
             return this;
