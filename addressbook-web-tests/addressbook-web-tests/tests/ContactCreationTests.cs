@@ -21,8 +21,14 @@ namespace WebAddressbookTests
             app.Contacts.Create(contact);
             app.Navigator.Logout();
         }
+
+        [Test]
+        public void EmptyContactCreationTest()
+        {
+            ContactData contact = new ContactData("");
+            contact.Lastname = "";
+            app.Contacts.Create(contact);
+            app.Navigator.Logout();
+        }
     }
 }
-
-//In Main bracnh - Задание №6: Реализовать двухуровневую архитектуру тестов + Лекция 2.5. Делаем новый тест без рекордера
-
