@@ -26,6 +26,9 @@
   </Class>
   <Class Name="WebAddressbookTests.GroupHelper" Collapsed="true">
     <Position X="7.75" Y="1.75" Width="1.5" />
+    <Compartments>
+      <Compartment Name="Methods" Collapsed="true" />
+    </Compartments>
     <TypeIdentifier>
       <HashCode>AAACIACAAABAAAAAAAAABAAAQAABMEAAAAAAAABAAAA=</HashCode>
       <FileName>appmanager\GroupHelper.cs</FileName>
@@ -41,7 +44,7 @@
   <Class Name="WebAddressbookTests.NavigationHelper" Collapsed="true">
     <Position X="7.75" Y="3.75" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAIAAAAAAAAAAAAAAAAAAAIAAAAIAAAAAAAAAAAAACA=</HashCode>
+      <HashCode>AAIAAAAAAAAAAAAAAAAAAAIAAAAIAIAAAAAAAAAAACA=</HashCode>
       <FileName>appmanager\NavigationHelper.cs</FileName>
     </TypeIdentifier>
   </Class>
@@ -55,7 +58,7 @@
   <Class Name="WebAddressbookTests.ApplicationManager" Collapsed="true">
     <Position X="5.5" Y="0.75" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAEAEQABAAAAAAAAAAAAASAAAAAgAAAIBAAABAAACA=</HashCode>
+      <HashCode>BAAEAEQABAAAAAAAAAAAAASAAAAAgAAAIBCAABAAACA=</HashCode>
       <FileName>appmanager\ApplicationManager.cs</FileName>
     </TypeIdentifier>
     <ShowAsAssociation>
