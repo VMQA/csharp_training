@@ -10,7 +10,7 @@ using OpenQA.Selenium.Support.UI;
 namespace WebAddressbookTests
 {
     [TestFixture]
-    public class GroupCreationTests : TestBase
+    public class GroupCreationTests : AuthTestBase
     { 
         [Test]
   
@@ -21,7 +21,6 @@ namespace WebAddressbookTests
             group.Footer = "ccc";
 
             app.Groups.Create(group);
-            app.Navigator.Logout();
         }
 
         [Test]
@@ -32,7 +31,6 @@ namespace WebAddressbookTests
             group.Footer = "";
 
             app.Groups.Create(group);
-            app.Navigator.Logout();
         }
     }
 }

@@ -32,10 +32,5 @@ namespace WebAddressbookTests
         {
             driver.FindElement(By.LinkText("add new")).Click();
         }
-
-        public void Logout()
-        {
-            driver.FindElement(By.LinkText("Logout")).Click();
-        }
     }
 }
