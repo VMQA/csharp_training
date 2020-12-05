@@ -67,12 +67,9 @@ namespace WebAddressbookTests
 
         public void FillContactForm(ContactData contact)
         {
-            driver.FindElement(By.Name("firstname")).Click();
-            driver.FindElement(By.Name("firstname")).Clear();
-            driver.FindElement(By.Name("firstname")).SendKeys(contact.Firstname);
-            driver.FindElement(By.Name("lastname")).Click();
-            driver.FindElement(By.Name("lastname")).Clear();
-            driver.FindElement(By.Name("lastname")).SendKeys(contact.Lastname);
+
+            Type(By.Name("firstname"), contact.Firstname);
+            Type(By.Name("lastname"), contact.Lastname);
         }
 
         public void SubmitContactCreation()
@@ -83,6 +80,30 @@ namespace WebAddressbookTests
         public void ReturnToHomePage()
         {
             driver.FindElement(By.LinkText("home page")).Click();
+        }
+
+        public void CheckContactPresent()
+        {
+            if (IsContactExist() == false)
+            {
+                ContactData contact = new ContactData("New First Name");
+                contact.Lastname = "New Lastname";
+
+                manager.Navigator.GoToAddNewPage();
+                FillContactForm(contact);
+                SubmitContactCreation();
+                ReturnToHomePage();
+            }
+        }
+
+        public bool IsContactExist()
+        {
+            //return IsElementPresent(By.ClassName("entry"));
+            return IsElementPresent(By.XPath("(//img[@alt='Edit'])"));
+
+            //driver.FindElement(By.XPath("(//img[@alt='Edit'])[" + index + "]")).Click();
+
+
         }
 
     }

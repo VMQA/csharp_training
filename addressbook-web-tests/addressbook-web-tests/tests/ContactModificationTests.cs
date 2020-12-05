@@ -10,18 +10,18 @@ using OpenQA.Selenium.Support.UI;
 namespace WebAddressbookTests
 {
     [TestFixture]
-    public class ContactModificationTests : TestBase
+    public class ContactModificationTests : AuthTestBase
     {
 
         [Test]
         public void ContactModificationTest()
         {
-            ContactData newData = new ContactData("2Bob");
-            newData.Lastname = "2Smith";
+            app.Contacts.CheckContactPresent();
+
+            ContactData newData = new ContactData("Bob with not modified Last Name");
+            newData.Lastname = null;
 
             app.Contacts.Modify(1, newData);
-
-            app.Navigator.Logout();
         }
     }
 }
