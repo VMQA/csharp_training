@@ -47,6 +47,32 @@ namespace WebAddressbookTests
             return this;
         }
 
+        public void CheckGroupPresent()
+        {
+            manager.Navigator.GoToGroupsPage();
+            if (IsGroupExist() == false)
+            {
+                GroupData group = new GroupData("new");
+                group.Header = "new header";
+                group.Footer = "new footer";
+
+                manager.Navigator.GoToGroupsPage();
+                InitGroupCreation();
+                FillGroupForm(group);
+                SubmitGroupCreation();
+            }
+        }
+
+        public bool IsGroupExist()
+        {
+            return IsElementPresent(By.ClassName("group"));
+
+            //return IsElementPresent(By.XPath("(//input[@name='selected[1]'])"));
+          
+            //return IsElementPresent(By.XPath("(//checkbox[@name='selected[]'])"));
+
+        }
+
         public GroupHelper InitGroupCreation()
         {
             driver.FindElement(By.Name("new")).Click();
