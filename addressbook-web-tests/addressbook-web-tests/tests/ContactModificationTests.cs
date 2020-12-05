@@ -16,6 +16,8 @@ namespace WebAddressbookTests
         [Test]
         public void ContactModificationTest()
         {
+            app.Contacts.CheckContactPresent();
+
             ContactData newData = new ContactData("Bob with not modified Last Name");
             newData.Lastname = null;
 

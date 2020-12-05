@@ -82,5 +82,29 @@ namespace WebAddressbookTests
             driver.FindElement(By.LinkText("home page")).Click();
         }
 
+        public void CheckContactPresent()
+        {
+            if (IsContactExist() == false)
+            {
+                ContactData contact = new ContactData("New First Name");
+                contact.Lastname = "New Lastname";
+
+                manager.Navigator.GoToAddNewPage();
+                FillContactForm(contact);
+                SubmitContactCreation();
+                ReturnToHomePage();
+            }
+        }
+
+        public bool IsContactExist()
+        {
+            //return IsElementPresent(By.ClassName("entry"));
+            return IsElementPresent(By.XPath("(//img[@alt='Edit'])"));
+
+            //driver.FindElement(By.XPath("(//img[@alt='Edit'])[" + index + "]")).Click();
+
+
+        }
+
     }
 }

@@ -67,10 +67,6 @@ namespace WebAddressbookTests
         {
             return IsElementPresent(By.ClassName("group"));
 
-            //return IsElementPresent(By.XPath("(//input[@name='selected[1]'])"));
-          
-            //return IsElementPresent(By.XPath("(//checkbox[@name='selected[]'])"));
-
         }
 
         public GroupHelper InitGroupCreation()
